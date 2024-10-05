@@ -80,7 +80,8 @@ class UserLogin {
 
                 // Executando o statement
                 $stmt->execute();
-                header('Location: ../views/home.html');
+
+                header('Location: ../public/index.php');
                 
             } catch (PDOException $e) {
                 echo "Erro ao cadastrar: " . $e->getMessage();

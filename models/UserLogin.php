@@ -40,10 +40,8 @@ class UserLogin {
             if (password_verify($this->senha, $resultado['senha'])) {
                 session_start(); // Iniciando a sessão
                 // Armazenando informações do usuário na sessão
-                $_SESSION['id'] = $resultado['id'];
-                $_SESSION['nome'] = $resultado['nome'];
-                $_SESSION['email'] = $resultado['email'];
-                $_SESSION['tipo_usuario'] = $resultado['tipo_usuario'];
+                $_SESSION['user_id'] = $resultado['id'];
+                
                 header('Location: ../views/home.html'); // Redireciona para a página inicial
 
                 exit(); // Garantindo que não mais nada seja executado
