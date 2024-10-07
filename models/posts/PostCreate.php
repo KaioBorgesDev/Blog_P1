@@ -16,20 +16,32 @@ class Postagem {
     }
 
     public function savePost(): void {
-        try {
-            $conexao = FactoryConection::getInstance()->getConnection();
-            $sql = "INSERT INTO postagens (id_usuario, titulo, conteudo) VALUES (:id_usuario, :titulo, :conteudo)";
-            $smt = $conexao->prepare($sql); // Prepara a instrução SQL
-            $smt->bindParam(":id_usuario", $this->idUsuario);
-            $smt->bindParam(":titulo", $this->titulo);
-            $smt->bindParam(":conteudo", $this->conteudo);
-            $smt->execute(); // Executa a consulta
+        // Obtendo a conexão
+    $conexao = FactoryConection::getInstance()->getConnection();
 
-            $_SESSION["msg_post"] = "Sucesso"; // Mensagem de sucesso
-            header("Location: ../../views/add_postagem.php");
-        } catch (Exception $e) {
-            $_SESSION["msg_post"] = "Erro: " . $e->getMessage(); // Mensagem de erro
-        }
+    // Verifica se a conexão é nula
+    if ($conexao === null) {
+        $_SESSION["msg_post"] = "Erro: Não foi possível estabelecer conexão com o banco de dados.";
+        header("Location: ../../views/add_postagem.php");
+        exit();
+    }
+
+    $sql = "INSERT INTO postagens (id_usuario, titulo, conteudo) VALUES (:id_usuario, :titulo, :conteudo)";
+    $smt = $conexao->prepare($sql); // Prepara a instrução SQL
+    $smt->bindParam(":id_usuario", $this->idUsuario);
+    $smt->bindParam(":titulo", $this->titulo);
+    $smt->bindParam(":conteudo", $this->conteudo);
+
+    try {
+        $smt->execute(); // Executa a consulta
+        $_SESSION["msg_post"] = "Sucesso"; // Mensagem de sucesso
+    } catch (PDOException $e) {
+        $_SESSION["msg_post"] = "Erro ao inserir postagem: " . $e->getMessage(); // Mensagem de erro
+    }
+
+    // Redireciona para a página de adição de postagens
+    header("Location: ../../views/add_postagem.php");
+    exit();
     }
 }
 

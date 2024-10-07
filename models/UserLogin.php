@@ -33,7 +33,7 @@ class UserLogin {
         // Buscando o resultado
         $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
         // Fechando a conexão com o banco de dados
-        $conexao = null;
+       
         // Verifica se o usuário foi encontrado
         if ($resultado) {
             // Aqui estamos usando a função password_verify para verificar a senha

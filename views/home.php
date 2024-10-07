@@ -27,8 +27,6 @@ class Postagem {
 
             $resultados = $smt->fetchAll(PDO::FETCH_ASSOC); // busca todos os resultados
 
-            $conexao = null; // desconectando
-
             // vamos buscar o nome do autor
             $conexao_nome = FactoryConection::getInstance()->getConnection();
             foreach ($resultados as &$post) {
