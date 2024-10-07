@@ -10,7 +10,7 @@
 </head>
 <body>
     <!-- Formulario de login -->
-    <form action="../models/UserLogin.php" method="post" class="container">
+    <form action="/models/UserLogin.php" method="post" class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <!-- Verifica se há uma mensagem de erro na sessão -->
@@ -53,7 +53,7 @@
                         <input type="submit" value="Enviar" class="btn btn-primary">
                     </div>
                 </div>
-                <a href="cadastro.php">Não possui uma conta?</a>
+                <a href="/public/cadastro.php">Não possui uma conta?</a>
             </div>
         </div>
     </form>
