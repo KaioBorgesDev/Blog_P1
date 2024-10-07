@@ -42,7 +42,7 @@ class UserLogin {
                 // Armazenando informações do usuário na sessão
                 $_SESSION['user_id'] = $resultado['id'];
                 
-                header('Location: ../views/home.html'); // Redireciona para a página inicial
+                header('Location: ../views/home.php'); // Redireciona para a página inicial
 
                 exit(); // Garantindo que não mais nada seja executado
             } else {
