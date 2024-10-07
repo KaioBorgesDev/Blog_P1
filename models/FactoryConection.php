@@ -8,12 +8,12 @@ class FactoryConection {
         $options = [
             PDO::MYSQL_ATTR_SSL_CA => __DIR__ . '/../config/isrgrootx1.pem', // Caminho absoluto
         ];
-        
+
         try {
             $this->connection = new PDO(
-                'mysql:host=gateway01.us-east-1.prod.aws.tidbcloud.com;port=4000;dbname=test',
-                '4eZUjYPpRWcJxvX.root',
-                'jT3BMQxScbLNoMAH',
+                'mysql:host=' . getenv('DB_HOST') . ';port=' . getenv('DB_PORT') . ';dbname=' . getenv('DB_NAME'),
+                getenv('DB_USER'),
+                getenv('DB_PASSWORD'),
                 $options
             );
             $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -23,10 +23,8 @@ class FactoryConection {
         }
     }
     
-
     public static function getInstance() {
         if (self::$instance === null) {
-            
             self::$instance = new FactoryConection();
         }
         return self::$instance;
@@ -36,4 +34,3 @@ class FactoryConection {
         return $this->connection;
     }
 }
-
