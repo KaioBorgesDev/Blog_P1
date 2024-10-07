@@ -3,6 +3,10 @@
 ## Descrição
 Este repositório se trata de uma avaliação da FATEC Campinas, onde a ideia proposta é criar um Sistema para um BLOG. A stack utilizada é composta por HTML/CSS, PHP e MySQL.
 
+
+#Caso queira ver funcionando
+https://myblogfatec-gmhvbegzd6b8hdb0.brazilsouth-01.azurewebsites.net/
+
 ## Pré-requisitos
 - Servidor MySQL em execução
 - PHP instalado
@@ -10,15 +14,7 @@ Este repositório se trata de uma avaliação da FATEC Campinas, onde a ideia pr
 
 ## Instruções de Configuração
 
-### 1. Inicie o MySQL Server
-Certifique-se de iniciar o MySQL server com uma instância de usuário com o nome `root` e a senha `270275`.
-
-### 2. Criação do Banco de Dados
-Crie um banco de dados chamado `Sistema_Postagem` (lembre-se de usar snake_case):
-
-#### CREATE DATABASE Sistema_Postagem;
-
-### 2. Criação as Tabelas
+### Criação as Tabelas
 Após criar o banco de dados, execute os seguintes comandos SQL para criar as tabelas necessárias:
 
 #### CREATE TABLE usuarios (
