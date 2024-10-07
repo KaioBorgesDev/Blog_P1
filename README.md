@@ -14,6 +14,17 @@ https://myblogfatec-gmhvbegzd6b8hdb0.brazilsouth-01.azurewebsites.net/
 
 ## Instruções de Configuração
 
+### Criação das variaveis de ambiente (exemplo)
+
+DB_HOST=localhost
+DB_PORT=3306
+DB_NAME=meu_banco_de_dados
+DB_USER=usuario_admin
+DB_PASSWORD=senha_secreta
+APP_ENV=local
+APP_DEBUG=true
+
+
 ### Criação as Tabelas
 Após criar o banco de dados, execute os seguintes comandos SQL para criar as tabelas necessárias:
 
