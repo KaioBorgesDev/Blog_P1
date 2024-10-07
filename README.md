@@ -4,8 +4,8 @@
 Este repositório se trata de uma avaliação da FATEC Campinas, onde a ideia proposta é criar um Sistema para um BLOG. A stack utilizada é composta por HTML/CSS, PHP e MySQL.
 
 
-#Caso queira ver funcionando
-https://myblogfatec-gmhvbegzd6b8hdb0.brazilsouth-01.azurewebsites.net/
+## Caso queira ver funcionando
+# https://myblogfatec-gmhvbegzd6b8hdb0.brazilsouth-01.azurewebsites.net/
 
 ## Pré-requisitos
 - Servidor MySQL em execução
