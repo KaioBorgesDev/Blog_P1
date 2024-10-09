@@ -26,14 +26,13 @@
                             try {
                                 $conexao = FactoryConection::getInstance()->getConnection();
 
-                                // verifica se o usuário está logado
-                               
+                                // verifica se o usuário está loga
                                     $id_usuario = $_SESSION["user_id"];
 
                                     // sqkl para buscar os títulos e IDs das postagens do usuário logado
                                     $sql = "SELECT id, titulo FROM postagens WHERE id_usuario = :id_usuario";
                                     $stmt = $conexao->prepare($sql);
-                                    $stmt->bindParam(":id_usuario", $id_usuario, PDO::PARAM_INT);
+                                    $stmt->bindParam(":id_usuario", $id_usuario);
                                     $stmt->execute();
                                     $postagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -41,8 +40,6 @@
                                     foreach ($postagens as $postagem) {
                                         echo "<option value='" . $postagem['id'] . "'>" . $postagem['titulo'] . "</option>";
                                     }
-                                
-
                                 $conexao = null; // Fecha a conexão
                             } catch (Exception $e) {
                                 echo "Erro ao carregar as postagens: " . $e->getMessage();
