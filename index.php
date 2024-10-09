@@ -10,13 +10,13 @@
 </head>
 <body>
     <!-- Formulario de login -->
-    <form action="/models/UserLogin.php" method="post" class="container">
+    <form action="./models/UserLogin.php" method="post" class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <!-- Verifica se há uma mensagem de erro na sessão -->
                 <?php
                 session_start(); // Inicia a sessão para acessar mensagens de erro
-                if (isset($_SESSION['error'])) {
+                if (isset($_SESSION['msg_post'])) {
                     echo '<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
                         <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
                             <div class="toast-header">
@@ -25,11 +25,11 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
                             <div class="toast-body">
-                                ' . $_SESSION['error'] . '
+                                ' . $_SESSION['msg_post'] . '
                             </div>
                         </div>
                     </div>';
-                    unset($_SESSION['error']); // Remove a mensagem após exibi-la
+                    unset($_SESSION['msg_post']); // Remove a mensagem após exibi-la
                 }
                 ?>
                 <h1>Login</h1>
@@ -53,7 +53,7 @@
                         <input type="submit" value="Enviar" class="btn btn-primary">
                     </div>
                 </div>
-                <a href="/public/cadastro.php">Não possui uma conta?</a>
+                <a href="./public/cadastro.php">Não possui uma conta?</a>
             </div>
         </div>
     </form>

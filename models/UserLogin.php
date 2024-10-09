@@ -44,18 +44,20 @@ class UserLogin {
                 
                 header('Location: ../views/home.php'); // Redireciona para a página inicial
 
+                //
+                $_SESSION['msg_post'] = "Bem vindo!";
                 exit(); // Garantindo que não mais nada seja executado
             } else {
                 session_start();
-                $_SESSION['error'] = "Email ou senha inválidos. Vamos tentar de novo?";
-                header('Location: ../public/index.php'); // Redireciona para a página de login
+                $_SESSION['msg_post'] = "Email ou senha inválidos. Vamos tentar de novo?";
+                header('Location: ../index.php'); // Redireciona para a página de login
                 exit();
             }
         } else {
             
             session_start();
-            $_SESSION['error'] = "Email ou senha inválidos. Vamos tentar de novo?";
-            header('Location: ../public/index.php'); // Redireciona para a página de login
+            $_SESSION['msg_post'] = "Email ou senha inválidos. Vamos tentar de novo?";
+            header('Location: ../index.php'); // Redireciona para a página de login
                 
         }
     }

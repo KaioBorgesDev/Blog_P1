@@ -57,7 +57,7 @@
                                 <input type="submit"  value="Enviar" class="btn btn-primary">
                             </div>
                         </div>
-                        <a href="index.php">Possui uma conta?</a>    
+                        <a href="../index.php">Possui uma conta?</a>    
                 </div>
             </div>
         </form>

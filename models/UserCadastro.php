@@ -81,10 +81,11 @@ class UserLogin {
                 // Executando o statement
                 $stmt->execute();
 
-                header('Location: ../public/index.php');
+                $_SESSION['msg_post'] = "Cadastrado com sucesso";
+                header('Location: ../index.php');
                 
             } catch (PDOException $e) {
-                echo "Erro ao cadastrar: " . $e->getMessage();
+                $_SESSION['msg_post'] = "Erro ao cadastrar: " . $e->getMessage();;
             }
         }
     }

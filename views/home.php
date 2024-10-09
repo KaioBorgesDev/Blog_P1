@@ -84,6 +84,24 @@ $posts = Postagem::getAllPosts();
 
     <div class="container mt-5">
         <h1>Postagens</h1>
+        <?php
+                
+                if (isset($_SESSION['msg_post'])) {
+                    echo '<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+                        <div id="liveToast" class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+                            <div class="toast-header">
+                                <strong class="me-auto">Status</strong>
+                                <small>agora mesmo</small>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                            </div>
+                            <div class="toast-body">
+                                ' . $_SESSION['msg_post'] . '
+                            </div>
+                        </div>
+                    </div>';
+                    unset($_SESSION['msg_post']);
+                }
+            ?>
         
         <div class="list-group">
             <?php foreach ($posts as $post): ?>
