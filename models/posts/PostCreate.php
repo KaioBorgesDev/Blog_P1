@@ -25,7 +25,7 @@ class Postagem {
         header("Location: ../../views/add_postagem.php");
         exit();
     }
-
+    
     $sql = "INSERT INTO postagens (id_usuario, titulo, conteudo) VALUES (:id_usuario, :titulo, :conteudo)";
     $smt = $conexao->prepare($sql); // Prepara a instrução SQL
     $smt->bindParam(":id_usuario", $this->idUsuario);

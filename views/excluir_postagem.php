@@ -27,8 +27,8 @@
                                 $conexao = FactoryConection::getInstance()->getConnection();
 
                                 // verifica se o usuário está logado
-                                if (!empty($_SESSION["user_id"])) {
-                                    $id_usuario = $_SESSION['user_id'];
+                               
+                                    $id_usuario = $_SESSION["user_id"];
 
                                     // sqkl para buscar os títulos e IDs das postagens do usuário logado
                                     $sql = "SELECT id, titulo FROM postagens WHERE id_usuario = :id_usuario";
@@ -41,9 +41,7 @@
                                     foreach ($postagens as $postagem) {
                                         echo "<option value='" . $postagem['id'] . "'>" . $postagem['titulo'] . "</option>";
                                     }
-                                } else {
-                                    echo "<option disabled>Usuário não logado.</option>";
-                                }
+                                
 
                                 $conexao = null; // Fecha a conexão
                             } catch (Exception $e) {

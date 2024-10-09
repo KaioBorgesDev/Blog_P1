@@ -95,7 +95,7 @@ $posts = Postagem::getAllPosts();
                                 <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                             </div>
                             <div class="toast-body">
-                                ' . $_SESSION['msg_post'] . '
+                                ' . $_SESSION['msg_post'] . $_SESSION["user_id"] . '
                             </div>
                         </div>
                     </div>';
