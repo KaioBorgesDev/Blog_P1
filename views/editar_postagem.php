@@ -29,7 +29,7 @@
                                 $conexao = FactoryConection::getInstance()->getConnection();
 
                                 // Verifica se o usuário está logado
-                                if (isset($_SESSION['user_id'])) {
+                                if (!empty($_SESSION["user_id"])) {
                                     $id_usuario = $_SESSION['user_id'];
 
                                     // SQL para buscar os títulos e IDs das postagens do usuário logado
