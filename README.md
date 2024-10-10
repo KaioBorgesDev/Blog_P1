@@ -21,8 +21,7 @@ DB_PORT=3306
 DB_NAME=meu_banco_de_dados
 DB_USER=usuario_admin
 DB_PASSWORD=senha_secreta
-APP_ENV=local
-APP_DEBUG=true
+
 
 
 ### Criação as Tabelas
