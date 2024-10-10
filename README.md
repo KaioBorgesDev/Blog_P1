@@ -23,6 +23,8 @@ DB_USER=usuario_admin
 DB_PASSWORD=senha_secreta
 
 
+### Apague no FactoryConection a variavel $options para testar localmente!
+
 
 ### Criação as Tabelas
 Após criar o banco de dados, execute os seguintes comandos SQL para criar as tabelas necessárias:
